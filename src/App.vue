@@ -1,21 +1,20 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <find-car />
+    <find-car @showCars="showCars" :carsShown="carsShown" />
+    <cars-list v-if="carsShown" />
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-
 import axios from "axios";
+import CarsList from "./components/CarsList.vue";
 import FindCar from "./components/FindCar.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld,
     FindCar,
+    CarsList,
   },
   data() {
     return {
@@ -23,6 +22,7 @@ export default {
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsInJlcyI6ImFnZ3JlZ2F0b3IiLCJpYXQiOjE2MzEwMTAwMjN9.YdfhveqPYc98LSxQAiB3Ern3wZFFWKsg5EejtC4q2bo",
       availableAutos: [],
       fetchedData: null,
+      carsShown: false,
     };
   },
   methods: {
@@ -49,6 +49,14 @@ export default {
         })
         .catch((err) => console.log(err));
     },
+    reserve() {
+      this.loading = true;
+
+      setTimeout(() => (this.loading = false), 2000);
+    },
+    showCars() {
+      this.carsShown = !this.carsShown;
+    },
   },
   created() {
     this.fetchData();
@@ -63,6 +71,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
 }
 </style>
