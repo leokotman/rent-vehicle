@@ -29,7 +29,7 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get("http://localhost:8080/api_aggregator/vehicles/", {
+        .get("http://leokotman.github.io/rent-vehicle/api_aggregator/vehicles/", {
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Credentials": true,
