@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-card class="mx-auto my-12" width="400px">
+    <v-card class="mx-auto" width="400px">
       <img height="250" src="../assets/img/car.jpeg" />
 
       <v-card-title>Find your car</v-card-title>
@@ -13,13 +13,8 @@
 
       <v-card-text>
         <v-chip-group class="blue" active-class="deep-purple accent-4" column>
-          <v-chip class="blue">5:30PM</v-chip>
-
-          <v-chip>7:30PM</v-chip>
-
-          <v-chip>8:00PM</v-chip>
-
-          <v-chip>9:00PM</v-chip>
+          <v-chip>Today</v-chip>
+          <v-chip>Tomorrow</v-chip>
         </v-chip-group>
       </v-card-text>
 
@@ -39,12 +34,29 @@ export default {
     carsShown: Boolean,
   },
   data() {
-    return {};
+    return {
+      today: "",
+      tomorrow: "",
+    };
   },
   methods: {
     handleShowCars() {
       this.$emit("showCars");
     },
+    getToday() {
+    //   let date = new Date();
+    //   let day = date.getDate();
+    //   let month = date.getMonth() + 1;
+    //   let year = date.getFullYear();
+
+      const today = new Date();
+      this.today = today;
+      const tomorrow = new Date(today);
+      this.tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
+    },
+  },
+  created() {
+    this.getToday();
   },
 };
 </script>

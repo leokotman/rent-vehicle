@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <find-car @showCars="showCars" :carsShown="carsShown" />
-    <cars-list v-if="carsShown" />
+    <cars-list v-if="carsShown" :vehicles="fetchedData.vehicles" />
   </div>
 </template>
 
@@ -71,10 +71,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 2%;
+  margin: 2% auto 2%;
+  width: 80%;
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }

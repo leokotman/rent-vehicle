@@ -3,12 +3,16 @@
     <v-list rounded>
       <v-subheader>Available cars</v-subheader>
       <v-list-item-group v-model="selectedItem" color="primary">
-        <v-list-item v-for="(item, i) in items" :key="i">
+        <v-list-item v-for="(car, i) in vehicles" :key="i">
           <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
+            <v-icon>mdi-car-hatchback</v-icon>
+            <img :src="car.image.thumb_url" class="car_img" />
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title v-text="item.text"></v-list-item-title>
+            <v-list-item-title>Model: {{car.vehicle_model.name}}</v-list-item-title>
+            <v-list-item-subtitle> №: {{ car.id }}</v-list-item-subtitle>
+            <p>Car type:{{ car.car_type }}</p>
+            <p>Fuel: {{ car.fuel_type }}</p>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -18,8 +22,11 @@
 
 <script>
 export default {
+  props: {
+    vehicles: Array,
+  },
   data: () => ({
-    selectedItem: 1,
+    selectedItem: 0,
     items: [
       { text: "Real-Time", icon: "mdi-clock" },
       { text: "Audience", icon: "mdi-account" },
@@ -29,4 +36,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.car_img {
+  width: 40px;
+  height: 40px;
+}
+</style>
