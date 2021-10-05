@@ -9,10 +9,13 @@
             <img :src="car.image.thumb_url" class="car_img" />
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>Model: {{car.vehicle_model.name}}</v-list-item-title>
+            <v-list-item-title
+              >Model: {{ car.vehicle_model.name }}</v-list-item-title
+            >
             <v-list-item-subtitle> №: {{ car.id }}</v-list-item-subtitle>
-            <p>Car type:{{ car.car_type }}</p>
+            <p>Car type: {{ car.car_type }}</p>
             <p>Fuel: {{ car.fuel_type }}</p>
+            <p>License: {{ car.license }}</p>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>

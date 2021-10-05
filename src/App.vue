@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Rent - a - Car</h1>
     <find-car @showCars="showCars" :carsShown="carsShown" />
     <cars-list v-if="carsShown" :vehicles="fetchedData.vehicles" />
   </div>
@@ -79,5 +80,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+h1 {
+  font-size: 2rem;
+  width: 80%;
 }
 </style>
