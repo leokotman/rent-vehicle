@@ -30,7 +30,7 @@ export default {
     fetchData() {
       axios
         .get(
-          "https://leokotman.github.io/rent-vehicle/api_aggregator/vehicles/",
+          "https://prerelease.moqo.de//rent-vehicle/api_aggregator/vehicles/",
           {
             headers: {
               "Access-Control-Allow-Origin": "*",
