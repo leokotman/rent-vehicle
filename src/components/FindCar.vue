@@ -12,7 +12,11 @@
       <v-divider class="mx-4"></v-divider>
 
       <v-card-text>
-        <v-chip-group class="blue" active-class="deep-purple accent-4" column>
+        <v-chip-group
+          class="blue lighten-5"
+          active-class="deep-purple accent-1"
+          column
+        >
           <v-chip>Today</v-chip>
           <v-chip>Tomorrow</v-chip>
           <v-chip @click="toggleCalendar"
@@ -22,7 +26,12 @@
       </v-card-text>
 
       <v-card-actions>
-        <v-btn color="deep-purple lighten-2" text @click="handleShowCars">
+        <v-btn
+          color="deep-purple lighten-1"
+          elevation="2"
+          text
+          @click="handleShowCars"
+        >
           {{ carsShown ? "Hide" : "Show cars" }}
         </v-btn>
       </v-card-actions>
@@ -69,6 +78,9 @@ export default {
 </script>
 
 <style scoped>
+.v-chip-group {
+  border-radius: 10px;
+}
 img {
   background-size: cover;
   width: 100%;

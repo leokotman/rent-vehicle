@@ -30,11 +30,6 @@ export default {
   },
   data: () => ({
     selectedItem: 0,
-    items: [
-      { text: "Real-Time", icon: "mdi-clock" },
-      { text: "Audience", icon: "mdi-account" },
-      { text: "Conversions", icon: "mdi-flag" },
-    ],
   }),
 };
 </script>

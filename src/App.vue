@@ -16,7 +16,7 @@
 import axios from "axios";
 import CarsList from "./components/CarsList.vue";
 import FindCar from "./components/FindCar.vue";
-import TheCalendar from './components/TheCalendar.vue';
+import TheCalendar from "./components/TheCalendar.vue";
 
 export default {
   name: "App",
@@ -84,14 +84,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#app .v-application--wrap {
   margin: 2% auto 2%;
   width: 80%;
   max-width: 900px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex: none;
+  min-height: unset;
 }
 h1 {
   font-size: 2rem;
