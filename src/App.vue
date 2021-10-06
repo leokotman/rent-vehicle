@@ -29,24 +29,22 @@ export default {
   methods: {
     fetchData() {
       axios
-        .get(
-          "https://prerelease.moqo.de//rent-vehicle/api_aggregator/vehicles/",
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Credentials": true,
-              "Access-Control-Allow-Methods": ("GET", "POST", "OPTIONS"),
-              "Access-Control-Allow-Headers":
-                ("Origin", "Content - Type", "Accept"),
-              Authorization: `Bearer ${this.token}`,
-            },
-            responseType: "json",
-            proxy: {
-              protocol: "https",
-              host: "leokotman.github.io/rent-vehicle/",
-            },
-          }
-        )
+        .get("http://localhost:8080/api_aggregator/vehicles/", {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Methods": ("GET", "POST", "OPTIONS"),
+            "Access-Control-Allow-Headers":
+              ("Origin", "Content - Type", "Accept"),
+            Authorization: `Bearer ${this.token}`,
+          },
+          responseType: "json",
+          proxy: {
+            protocol: "http",
+            host: "192.168.43.176",
+            port: 8080,
+          },
+        })
         .then((res) => {
           this.fetchedData = res.data;
         })
