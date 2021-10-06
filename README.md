@@ -1,4 +1,5 @@
 # rent-vehicle
+App to show available vehicles, possible to add functionality "Choose dates"
 
 ## Project setup
 ```
