@@ -99,7 +99,7 @@ export default {
   min-height: unset;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 80%;
 }
 </style>

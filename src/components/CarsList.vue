@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="300" tile>
+  <v-card class="mx-auto" tile>
     <v-list rounded>
       <v-subheader>Available cars</v-subheader>
       <v-list-item-group v-model="selectedItem" color="primary">
@@ -38,5 +38,8 @@ export default {
 .car_img {
   width: 40px;
   height: 40px;
+}
+.v-list-item__subtitle, .v-list-item__title {
+  white-space: pre-wrap;
 }
 </style>

@@ -1,41 +1,43 @@
 <template>
   <section>
-    <v-card class="mx-auto" width="400px">
-      <img height="250" src="../assets/img/car.jpeg" />
+    <v-responsive>
+      <v-card class="mx-auto" color="light-blue lighten-5">
+        <img height="250" src="../assets/img/car.jpeg" />
 
-      <v-card-title>Find your car</v-card-title>
+        <v-card-title>Find your car</v-card-title>
 
-      <v-card-text>
-        <div>Click on the dates below to find the available cars</div>
-      </v-card-text>
+        <v-card-text>
+          <div>Click on the dates below to find the available cars</div>
+        </v-card-text>
 
-      <v-divider class="mx-4"></v-divider>
+        <v-divider class="mx-4"></v-divider>
 
-      <v-card-text>
-        <v-chip-group
-          class="blue lighten-5"
-          active-class="deep-purple accent-1"
-          column
-        >
-          <v-chip>Today</v-chip>
-          <v-chip>Tomorrow</v-chip>
-          <v-chip @click="toggleCalendar"
-            >{{ calendarShown ? "Hide" : "Show" }} calendar</v-chip
+        <v-card-text>
+          <v-chip-group
+            class="blue lighten-5"
+            active-class="deep-purple accent-1"
+            column
           >
-        </v-chip-group>
-      </v-card-text>
+            <v-chip>Today</v-chip>
+            <v-chip>Tomorrow</v-chip>
+            <v-chip @click="toggleCalendar"
+              >{{ calendarShown ? "Hide" : "Show" }} calendar</v-chip
+            >
+          </v-chip-group>
+        </v-card-text>
 
-      <v-card-actions>
-        <v-btn
-          color="deep-purple lighten-1"
-          elevation="2"
-          text
-          @click="handleShowCars"
-        >
-          {{ carsShown ? "Hide" : "Show cars" }}
-        </v-btn>
-      </v-card-actions>
-    </v-card>
+        <v-card-actions>
+          <v-btn
+            color="deep-purple lighten-1"
+            elevation="2"
+            text
+            @click="handleShowCars"
+          >
+            {{ carsShown ? "Hide" : "Show cars" }}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-responsive>
   </section>
 </template>
 
@@ -88,7 +90,6 @@ img {
 @media screen and (max-width: 380px) {
   img {
     background-size: contain;
-    width: auto;
   }
 }
 </style>

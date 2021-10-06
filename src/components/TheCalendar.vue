@@ -10,7 +10,7 @@
         prepend-icon="mdi-calendar"
         readonly
       ></v-text-field>
-      model: {{ dates }}
+      Chosen dates: {{ dates }}
     </v-col>
   </v-row>
 </template>
