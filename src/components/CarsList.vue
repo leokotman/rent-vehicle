@@ -35,6 +35,10 @@ export default {
 </script>
 
 <style scoped>
+.mx-auto {
+  max-width: 45%;
+  min-width: 230px;
+}
 .car_img {
   width: 40px;
   height: 40px;

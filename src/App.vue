@@ -29,7 +29,6 @@ export default {
     return {
       token:
         "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjUsInJlcyI6ImFnZ3JlZ2F0b3IiLCJpYXQiOjE2MzEwMTAwMjN9.YdfhveqPYc98LSxQAiB3Ern3wZFFWKsg5EejtC4q2bo",
-      availableAutos: [],
       fetchedData: null,
       carsShown: false,
       calendarShown: false,

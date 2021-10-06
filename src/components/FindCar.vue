@@ -85,11 +85,12 @@ export default {
 }
 img {
   background-size: cover;
-  width: 100%;
+  width: auto;
 }
 @media screen and (max-width: 380px) {
   img {
     background-size: contain;
+    width: 100%;
   }
 }
 </style>
