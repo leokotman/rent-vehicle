@@ -1,21 +1,29 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <h1>Rent - a - Car</h1>
-    <find-car @showCars="showCars" :carsShown="carsShown" />
+    <find-car
+      @showCars="showCars"
+      :carsShown="carsShown"
+      @calendarToggle="toggleCalendar"
+      :calendarShown="calendarShown"
+    />
     <cars-list v-if="carsShown" :vehicles="fetchedData.vehicles" />
-  </div>
+    <the-calendar v-show="calendarShown" />
+  </v-app>
 </template>
 
 <script>
 import axios from "axios";
 import CarsList from "./components/CarsList.vue";
 import FindCar from "./components/FindCar.vue";
+import TheCalendar from './components/TheCalendar.vue';
 
 export default {
   name: "App",
   components: {
     FindCar,
     CarsList,
+    TheCalendar,
   },
   data() {
     return {
@@ -24,6 +32,7 @@ export default {
       availableAutos: [],
       fetchedData: null,
       carsShown: false,
+      calendarShown: false,
     };
   },
   methods: {
@@ -57,6 +66,9 @@ export default {
     },
     showCars() {
       this.carsShown = !this.carsShown;
+    },
+    toggleCalendar() {
+      this.calendarShown = !this.calendarShown;
     },
   },
   created() {

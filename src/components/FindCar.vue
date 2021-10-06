@@ -15,6 +15,9 @@
         <v-chip-group class="blue" active-class="deep-purple accent-4" column>
           <v-chip>Today</v-chip>
           <v-chip>Tomorrow</v-chip>
+          <v-chip @click="toggleCalendar"
+            >{{ calendarShown ? "Hide" : "Show" }} calendar</v-chip
+          >
         </v-chip-group>
       </v-card-text>
 
@@ -29,9 +32,10 @@
 
 <script>
 export default {
-  emits: ["showCars"],
+  emits: ["showCars", "calendarToggle"],
   props: {
     carsShown: Boolean,
+    calendarShown: Boolean,
   },
   data() {
     return {
@@ -44,15 +48,18 @@ export default {
       this.$emit("showCars");
     },
     getToday() {
-    //   let date = new Date();
-    //   let day = date.getDate();
-    //   let month = date.getMonth() + 1;
-    //   let year = date.getFullYear();
+      //   let date = new Date();
+      //   let day = date.getDate();
+      //   let month = date.getMonth() + 1;
+      //   let year = date.getFullYear();
 
       const today = new Date();
       this.today = today;
       const tomorrow = new Date(today);
       this.tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
+    },
+    toggleCalendar() {
+      this.$emit("calendarToggle");
     },
   },
   created() {
